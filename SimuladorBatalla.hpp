@@ -12,6 +12,7 @@ using namespace std;
 class SimuladorBatalla{
 	public:
 		SimuladorBatalla();
+		~SimuladorBatalla();
 		Nokemon* simularBatalla(Nokemon*,Nokemon*);
 };
 

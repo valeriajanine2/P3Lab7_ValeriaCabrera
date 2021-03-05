@@ -25,14 +25,18 @@ int main(int argc, char** argv) {
 	cin>>usuario;
 	
 	Nokemon* nokemonUser;
+	Nokemon* nokemonPC;
+	int pc;
+	
+	pc = 1+rand()%3;
 	
 	switch(usuario){
+		
 		case 1:{
 			int nivel = 5+rand()%10;
 			vector<Ataque*> lista;
-			NokemonHierba* temp = new NokemonHierba();
 			AguacateMon* aguacate = new AguacateMon(49,49,lista,45,45,nivel,"AguacateMon");
-			temp = aguacate;
+			NokemonHierba* temp = (NokemonHierba*) aguacate;
 			nokemonUser = temp;
 			
 			break;
@@ -41,9 +45,8 @@ int main(int argc, char** argv) {
 		case 2:{
 			int nivel = 5+rand()%10;
 			vector<Ataque*> lista;
-			NokemonFuego* temp = new NokemonFuego();
 			AnafreMon* anafre = new AnafreMon(43,52,lista,39,39,nivel,"AnafreMon");
-			temp = anafre;
+			NokemonFuego* temp = (NokemonFuego*) anafre;
 			nokemonUser = temp;
 			
 			break;
@@ -52,9 +55,8 @@ int main(int argc, char** argv) {
 		case 3:{
 			int nivel = 5+rand()%10;
 			vector<Ataque*> lista;
-			NokemonHielo* temp = new NokemonHielo();
 			CharamuscoMon* charamusca = new CharamuscoMon(65,48,lista,44,44,nivel,"CharamuscoMon");
-			temp = charamusca;
+			NokemonHielo* temp = (NokemonHielo*) charamusca;
 			nokemonUser = temp;
 			
 			break;
@@ -66,8 +68,54 @@ int main(int argc, char** argv) {
 		}
 	}//fin del switch del usuario
 	
-	Nokemon* nokemonPC;
+	cout<<pc<<endl;
 	
+	switch(pc){
+		
+		case 1:{
+			int nivel = 5+rand()%10;
+			vector<Ataque*> lista;
+			AguacateMon* aguacate = new AguacateMon(49,49,lista,45,45,nivel,"AguacateMon");
+			NokemonHierba* temp = (NokemonHierba*) aguacate;
+			nokemonPC = temp;
+			
+			break;
+		}
+		
+		case 2:{
+			int nivel = 5+rand()%10;
+			vector<Ataque*> lista;
+			AnafreMon* anafre = new AnafreMon(43,52,lista,39,39,nivel,"AnafreMon");
+			NokemonFuego* temp = (NokemonFuego*) anafre;
+			nokemonPC = temp;
+			
+			break;
+		}
+		
+		case 3:{
+			int nivel = 5+rand()%10;
+			vector<Ataque*> lista;
+			CharamuscoMon* charamusca = new CharamuscoMon(65,48,lista,44,44,nivel,"CharamuscoMon");
+			NokemonHielo* temp = (NokemonHielo*) charamusca;
+			nokemonPC = temp;
+			
+			break;
+		}
+		
+		default:{
+			cout<<"Asegurese de ingresar una de las opciones de los Nokemon :)"<<endl;
+			break;
+		}
+	}//fin del switch del pc
 	
+	//agregar los ataques al nokemon
+	
+	Nokemon* ganador;
+	SimuladorBatalla* simulador = new SimuladorBatalla();
+	ganador = simulador->simularBatalla(nokemonUser,nokemonPC);
+	cout<<"Felicidades "<<ganador->getNombre()<<", ganaste la batalla Nokemon, puedes recoger tu medalla Maestro Nokemon <3"<<endl;
+	
+	delete simulador;
 	return 0;
+	
 }

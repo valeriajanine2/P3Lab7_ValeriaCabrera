@@ -13,13 +13,6 @@ class CharamuscoMon : public NokemonHielo{
 	public:
 		CharamuscoMon(int defensa, int ataque, vector<Ataque*> listaAtaques, int saludActual, int saludMaxima, int nivel, string nombre);
 		~CharamuscoMon();
-		int getDefensa();
-		int getAtaque();
-		int getSaludActual();
-		int getSaludMaxima();
-		int getNivel();
-		string getNombre();
-		vector<Ataque*> getListaAtaques();
 };
 
 #endif

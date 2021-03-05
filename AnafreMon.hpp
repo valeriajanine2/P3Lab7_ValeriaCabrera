@@ -14,13 +14,6 @@ class AnafreMon : public NokemonFuego{
 		AnafreMon();
 		AnafreMon(int defensa, int ataque, vector<Ataque*> listaAtaques, int saludActual, int saludMaxima, int nivel, string nombre);
 		~AnafreMon();
-		int getDefensa();
-		int getAtaque();
-		int getSaludActual();
-		int getSaludMaxima();
-		int getNivel();
-		string getNombre();
-		vector<Ataque*> getListaAtaques();
 };
 
 #endif

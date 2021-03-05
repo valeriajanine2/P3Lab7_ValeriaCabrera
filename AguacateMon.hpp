@@ -13,13 +13,6 @@ class AguacateMon : public NokemonHierba{
 	public:
 		AguacateMon(int defensa, int ataque, vector<Ataque*> listaAtaques, int saludActual, int saludMaxima, int nivel, string nombre);
 		~AguacateMon();
-		int getDefensa();
-		int getAtaque();
-		int getSaludActual();
-		int getSaludMaxima();
-		int getNivel();
-		string getNombre();
-		vector<Ataque*> getListaAtaques();
 };
 
 #endif

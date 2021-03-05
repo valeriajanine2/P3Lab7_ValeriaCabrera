@@ -38,7 +38,9 @@ void NokemonHielo::inicializarAtaque(){
 	Ataque* attack = ataques.at(r);
 	Ataque* attack1 = ataques.at(r1);
 	
-	this->getListaAtaques().push_back(attack);
-	this->getListaAtaques().push_back(attack1);
+	vector<Ataque*> temp;
+	temp.push_back(attack);
+	temp.push_back(attack1);
+	this->setListaAtaques(temp);
 	
 }
