@@ -1,5 +1,9 @@
 #include "NokemonFuego.hpp"
 
+NokemonFuego::NokemonFuego():Nokemon(){
+	
+}
+
 NokemonFuego::NokemonFuego(int defensa, int ataque, vector<Ataque*> listaAtaques, int saludActual, int saludMaxima, int nivel, string nombre):Nokemon(defensa,ataque,listaAtaques,saludActual,saludMaxima,nivel,nombre){
 	
 }
@@ -9,6 +13,7 @@ NokemonFuego::~NokemonFuego(){
 }
 
 void NokemonFuego::inicializarAtaque(){
+	srand (time(NULL));
 	Ataque* a1 = new Ataque("Fuego","Chispitas", 12);
 	Ataque* a2 = new Ataque("Fuego","Aceite Caliente", 18);
 	Ataque* a3 = new Ataque("Fuego","Llamas a mi", 35);
