@@ -1,0 +1,55 @@
+# Project: P3Lab7_ValeriaCabrera
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Ataque.o Nokemon.o NokemonFuego.o NokemonHierba.o NokemonHielo.o AnafreMon.o AguacateMon.o SimuladorBatalla.o CharamuscoMon.o
+LINKOBJ  = main.o Ataque.o Nokemon.o NokemonFuego.o NokemonHierba.o NokemonHielo.o AnafreMon.o AguacateMon.o SimuladorBatalla.o CharamuscoMon.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = P3Lab7_ValeriaCabrera.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Ataque.o: Ataque.cpp
+	$(CPP) -c Ataque.cpp -o Ataque.o $(CXXFLAGS)
+
+Nokemon.o: Nokemon.cpp
+	$(CPP) -c Nokemon.cpp -o Nokemon.o $(CXXFLAGS)
+
+NokemonFuego.o: NokemonFuego.cpp
+	$(CPP) -c NokemonFuego.cpp -o NokemonFuego.o $(CXXFLAGS)
+
+NokemonHierba.o: NokemonHierba.cpp
+	$(CPP) -c NokemonHierba.cpp -o NokemonHierba.o $(CXXFLAGS)
+
+NokemonHielo.o: NokemonHielo.cpp
+	$(CPP) -c NokemonHielo.cpp -o NokemonHielo.o $(CXXFLAGS)
+
+AnafreMon.o: AnafreMon.cpp
+	$(CPP) -c AnafreMon.cpp -o AnafreMon.o $(CXXFLAGS)
+
+AguacateMon.o: AguacateMon.cpp
+	$(CPP) -c AguacateMon.cpp -o AguacateMon.o $(CXXFLAGS)
+
+SimuladorBatalla.o: SimuladorBatalla.cpp
+	$(CPP) -c SimuladorBatalla.cpp -o SimuladorBatalla.o $(CXXFLAGS)
+
+CharamuscoMon.o: CharamuscoMon.cpp
+	$(CPP) -c CharamuscoMon.cpp -o CharamuscoMon.o $(CXXFLAGS)
