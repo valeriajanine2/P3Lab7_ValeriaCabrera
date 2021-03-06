@@ -17,7 +17,7 @@ void NokemonHielo::inicializarAtaque(){
 	Ataque* a1 = new Ataque("Hielo","Lanza Hielitos", 10);
 	Ataque* a2 = new Ataque("Hielo","Aliento de Hielo", 19);
 	Ataque* a3 = new Ataque("Hielo","Pista de Hielo", 27);
-	Ataque* a4 = new Ataque("Hielo","Rayo Conelador", 31);
+	Ataque* a4 = new Ataque("Hielo","Rayo Congelador", 31);
 	Ataque* a5 = new Ataque("Hielo","Lanza Charamuscas", 49);
 	Ataque* a6 = new Ataque("Hielo","Instant Freeze", 53);
 	

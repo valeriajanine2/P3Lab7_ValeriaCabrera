@@ -9,7 +9,7 @@ SimuladorBatalla::~SimuladorBatalla(){
 }
 
 Nokemon* SimuladorBatalla::simularBatalla(Nokemon* nokemon1, Nokemon* nokemon2){
-	srand (time(NULL));
+	
 	Nokemon* ganador;
 	
 	cout<<"Comenzando la batalla...."<<nokemon1->getNombre()<<" vs. "<<nokemon2->getNombre()<<endl;
@@ -39,11 +39,17 @@ Nokemon* SimuladorBatalla::simularBatalla(Nokemon* nokemon1, Nokemon* nokemon2){
 	bool conVida=true;
 	int vida1=nokemon1->getSaludMaxima(),vida2=nokemon2->getSaludMaxima();
 	int aux,aux2;
+	int rand1,rand2;
 	
 	while(conVida){
 		//ataque del primer nokemon
-		int rand1;
-		rand1 = 0+rand()%1;
+		srand (time(NULL));
+		rand1 = 1+rand()%10;
+		if(rand1%2==0){
+			rand1=0;
+		}else{
+			rand1=1;
+		}
 		Ataque* a1 = new Ataque();
 		nokemon1->inicializarAtaque();
 		a1=nokemon1->getListaAtaques().at(rand1);
@@ -61,8 +67,14 @@ Nokemon* SimuladorBatalla::simularBatalla(Nokemon* nokemon1, Nokemon* nokemon2){
 		cout<<"Salud de "<<nokemon2->getNombre()<<nokemon2->getSaludActual()<<"/"<<nokemon2->getSaludMaxima()<<endl;
 		
 		//ataque del segundo nokemon
-		int rand2;
-		rand2 = 0+rand()%1;
+		
+		
+		rand2 = 1+rand()%10;
+		if(rand2%2==0){
+			rand2=0;
+		}else{
+			rand2=1;
+		}
 		Ataque* a2 = new Ataque();
 		nokemon2->inicializarAtaque();
 		a2=nokemon2->getListaAtaques().at(rand2);
@@ -90,7 +102,8 @@ Nokemon* SimuladorBatalla::simularBatalla(Nokemon* nokemon1, Nokemon* nokemon2){
 		}
 		
 		cout<<endl;
-		
+		rand1=0;
+		rand2=0;
 	}
 	
 	return ganador;

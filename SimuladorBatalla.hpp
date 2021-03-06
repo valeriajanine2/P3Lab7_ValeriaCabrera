@@ -5,6 +5,12 @@
 #include <random>
 #include <ctime>
 #include "Nokemon.hpp"
+#include "AguacateMon.hpp"
+#include "NokemonHierba.hpp"
+#include "AnafreMon.hpp"
+#include "NokemonFuego.hpp"
+#include "CharamuscoMon.hpp"
+#include "NokemonHielo.hpp"
 #include "Ataque.hpp"
 
 using namespace std;
